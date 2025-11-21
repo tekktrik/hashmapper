@@ -28,7 +28,7 @@ RUN npm ci
 RUN npm run build
 
 # Expose port for serve
-EXPOSE 8000
+EXPOSE 8057
 
 # Start gunicorn and serve website
 CMD ["npx", "--yes", "serve", "dist", "-l", "8000"]
