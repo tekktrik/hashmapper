@@ -44,7 +44,7 @@ export const UploadMap: React.FC = () => {
         filename={filename}
       ></GPXFileUpload>
       {/* This API key can eventually be public if it's online, once access is restricted */}
-      <div style={{ width: "80vw", height:"75vh", marginLeft: "calc(50% - 40vw)" }}>
+      <div style={{ width: "80vw", height:"70vh", marginLeft: "calc(50% - 40vw)" }}>
         <APIProvider apiKey={import.meta.env.VITE_GMAPS_API_KEY}>
           <StopsMap points={points} route={route} />
         </APIProvider>
