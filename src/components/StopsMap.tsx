@@ -52,28 +52,25 @@ export const StopsMap: React.FC<StopsMapProps> = ({
   }, [points, route, map]);
 
   return (
-    <div>
-      <Map
-        id="gmap"
-        mapId="mv89mn8f98qwkmfm09"
-        style={{ width: "40vw", height: "75vh" }}
-        defaultCenter={convertPointToLatLng(baseLocation)}
-        defaultZoom={12}
-        clickableIcons={false}
-      >
-        {points.map((point, index) => (
-          <Point
-            key={`${point.latitude}_${point.longitude}`}
-            index={index}
-            numPoints={points.length}
-            point={point}
-          />
-        ))}
-        <Polyline
-          path={route.map((point) => convertPointToLatLng(point))}
-          clickable={false}
+    <Map
+      id="gmap"
+      mapId="mv89mn8f98qwkmfm09"
+      defaultCenter={convertPointToLatLng(baseLocation)}
+      defaultZoom={12}
+      clickableIcons={false}
+    >
+      {points.map((point, index) => (
+        <Point
+          key={`${point.latitude}_${point.longitude}`}
+          index={index}
+          numPoints={points.length}
+          point={point}
         />
-      </Map>
-    </div>
+      ))}
+      <Polyline
+        path={route.map((point) => convertPointToLatLng(point))}
+        clickable={false}
+      />
+    </Map>
   );
 };
