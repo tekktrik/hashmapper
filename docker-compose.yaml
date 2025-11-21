@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      args:
+        VITE_GMAPS_API_KEY: ${VITE_GMAPS_API_KEY}
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
